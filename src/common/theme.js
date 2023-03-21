@@ -1,6 +1,9 @@
 export const theme = {
   color: {
     bunker: "#161B22",
+    deepSeaGreen: "#0E566A",
+    mandysPink: "#F4C0B3",
+    chatelle: "#AFA7BC",
   },
 
   breakpoints: {

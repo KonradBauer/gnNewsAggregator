@@ -1,8 +1,12 @@
+import { ThemeProvider } from "styled-components";
+import { Header } from "./layoutData/Header/index";
+import { theme } from "./common/theme";
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header"></header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Header />
+    </ThemeProvider>
   );
 }
 
