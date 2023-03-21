@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const Box = styled.div`
-  max-width: 200px;
-
+  max-width: 100%;
+  margin: 0 auto;
   margin-top: 5px;
-  height: 480px;
+  height: 80px;
   display: flex;
   flex-direction: row;
   background-color: ${({ theme }) => theme.color.bunker};
