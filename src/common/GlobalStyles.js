@@ -12,6 +12,6 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    background: #F5F5FA;
+    background: #161B22;
   }
 `;
