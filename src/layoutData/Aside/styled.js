@@ -1,12 +1,7 @@
 import styled from "styled-components";
 
-export const Box = styled.div`
-  max-width: 200px;
-
-  margin-top: 5px;
-  height: 480px;
-  display: flex;
-  flex-direction: row;
-  background-color: ${({ theme }) => theme.color.bunker};
-  border-radius: 10px;
+export const AsideBox = styled.div`
+  grid-column-start: span 1;
+  background-color: ${({ theme }) => theme.color.shark};
+  border-radius: 3px;
 `;
