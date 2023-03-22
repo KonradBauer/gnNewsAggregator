@@ -4,6 +4,8 @@ export const theme = {
     deepSeaGreen: "#0E566A",
     mandysPink: "#F4C0B3",
     chatelle: "#AFA7BC",
+    shark: "#202123",
+    white: "#FFFFFF",
   },
 
   breakpoints: {
