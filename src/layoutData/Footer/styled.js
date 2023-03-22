@@ -1,12 +1,7 @@
 import styled from "styled-components";
 
-export const Box = styled.div`
-  max-width: 100%;
-  margin: 0 auto;
-  margin-top: 5px;
-  height: 80px;
-  display: flex;
-  flex-direction: row;
-  background-color: ${({ theme }) => theme.color.bunker};
-  border-radius: 10px;
+export const FooterBox = styled.div`
+  grid-column-start: span 3;
+  background: ${({ theme }) => theme.color.white};
+  border-radius: 3px;
 `;
