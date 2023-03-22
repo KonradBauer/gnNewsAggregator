@@ -1,12 +1,18 @@
-import { HeaderBox, LogoBox } from "./styled";
+import { HeaderBox, LogoBox, ButtonView, LogoWrapper, ButtonsWrapper, ButtonPopup } from "./styled";
 import logo from "../../common/images/logo.png";
 
 export const Header = () => {
   return (
     <HeaderBox>
-      <LogoBox>
-        <img src={logo} width="130" height="" alt="logo" />
-      </LogoBox>
+      <LogoWrapper>
+        <LogoBox>
+          <img src={logo} width="130" height="" alt="logo" />
+        </LogoBox>
+      </LogoWrapper>
+      <ButtonsWrapper>
+        <ButtonView>View</ButtonView>
+        <ButtonPopup>Popup Button</ButtonPopup>
+      </ButtonsWrapper>
     </HeaderBox>
   );
 };
