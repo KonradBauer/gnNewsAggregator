@@ -1,5 +1,5 @@
-import { Box } from "./styled";
+import { HeaderBox } from "./styled";
 
 export const Header = () => {
-  return <Box />;
+  return <HeaderBox />;
 };
