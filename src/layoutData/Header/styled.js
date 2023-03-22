@@ -33,6 +33,11 @@ export const ButtonView = styled.button`
   color: ${({ theme }) => theme.color.shark};
   font-weight: bold;
   cursor: pointer;
+  transition: 0.1s;
+
+  &:hover {
+    transform: scale(1.01);
+  }
 `;
 
 export const ButtonPopup = styled.button`
@@ -43,4 +48,9 @@ export const ButtonPopup = styled.button`
   color: ${({ theme }) => theme.color.shark};
   font-weight: bold;
   cursor: pointer;
+  transition: 0.1s;
+
+  &:hover {
+    transform: scale(1.01);
+  }
 `;
