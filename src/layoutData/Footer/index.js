@@ -1,5 +1,10 @@
-import { FooterBox } from "./styled";
+import { ArticleCounter, DateContainer, FooterBox } from "./styled";
 
 export const Footer = () => {
-  return <FooterBox />;
+  return (
+    <FooterBox>
+      <DateContainer>Date</DateContainer>
+      <ArticleCounter>Article</ArticleCounter>
+    </FooterBox>
+  );
 };
