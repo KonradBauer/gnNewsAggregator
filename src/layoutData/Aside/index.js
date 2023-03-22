@@ -1,5 +1,5 @@
-import { Box } from "./styled";
+import { AsideBox } from "./styled";
 
 export const Aside = () => {
-  return <Box />;
+  return <AsideBox />;
 };
