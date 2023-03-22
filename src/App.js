@@ -10,9 +10,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Container>
-        <Header>
-          <h1>header</h1>
-        </Header>
+        <Header></Header>
         <Aside>
           <h2>aside</h2>
         </Aside>
