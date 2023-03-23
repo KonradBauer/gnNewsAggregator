@@ -2,20 +2,29 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const newsSlice = createSlice({
   name: "news",
-  initialState: { status: null },
+  initialState: {
+    status: "initial",
+    news: null,
+  },
   reducers: {
-    statusInital: (state) => {
-      state.status = null;
-    },
-    statusLoading: (state) => {
-      state.status = "loading";
-    },
-    statusSuccess: (state) => {
-      state.status = "success";
-    },
+    statusLoading: () => ({
+      news: null,
+      status: "loading",
+    }),
+    statusSuccess: (_, { payload: news }) => ({
+      news,
+      status: "success",
+    }),
+    statusError: () => ({ news: null, status: "error" }),
   },
 });
 
 export const { statusInital, statusLoading, statusSuccess } = newsSlice.actions;
+
+export const selectNews = (state) => state.news;
+
+export const selectNewsStatus = (state) => selectNews(state).status;
+
+export const selectNewsData = (state) => selectNews(state).news;
 
 export default newsSlice.reducer;
