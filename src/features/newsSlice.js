@@ -4,11 +4,11 @@ export const newsSlice = createSlice({
   name: "news",
   initialState: {
     status: "initial",
-    news: null,
+    news: [],
   },
   reducers: {
     statusLoading: () => ({
-      news: null,
+      news: [],
       status: "loading",
     }),
     statusSuccess: (_, { payload: news }) => ({
