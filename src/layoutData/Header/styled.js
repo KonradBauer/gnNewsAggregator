@@ -8,10 +8,13 @@ export const HeaderBox = styled.div`
   justify-content: space-between;
 `;
 
-export const LogoWrapper = styled.div`
+export const LogoWrapper = styled.button`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
 `;
 
 export const ButtonsWrapper = styled.div`
