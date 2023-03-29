@@ -17,3 +17,33 @@ export const Tile = styled.div`
   max-width: 450px;
   height: 200px;
 `;
+
+export const NewsTile = ({
+  id,
+  source,
+  author,
+  title,
+  description,
+  url,
+  urlToImage,
+  publishedAt,
+  content,
+}) => {
+  return (
+    <div className="news-tile">
+      <div className="news-tile-image">
+        <img src={urlToImage} alt={title} />
+      </div>
+      <div className="news-tile-content">
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <p>{content}</p>
+        <div className="news-tile-meta">
+          <span>{source.name}</span>
+          <span>{author}</span>
+          <span>{publishedAt}</span>
+        </div>
+      </div>
+    </div>
+  );
+};
