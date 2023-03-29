@@ -7,6 +7,11 @@ export const FooterBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    font-size: 12px;
+    padding: 10px;
+  }
 `;
 
 export const DateContainer = styled.div`

@@ -27,7 +27,7 @@ export const ButtonsWrapper = styled.div`
 
 export const LogoBox = styled.div`
   margin-top: 5px;
-  margin-left: 60px;
+  margin-left: 30px;
   max-width: 130px;
 `;
 
