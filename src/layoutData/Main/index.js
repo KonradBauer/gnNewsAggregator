@@ -6,31 +6,24 @@ export const Main = () => {
   const country = useSelector(selectCountry);
   const news = useSelector(selectNewsData);
   const status = useSelector(selectNewsStatus);
+
   return (
     <MainBox>
-      <Tile />
-      <Tile />
-      <Tile />
-      <Tile />
-      <Tile />
-      <Tile />
-      <Tile />
-      <Tile />
+      {news.map(
+        ({ id, url, source, author, title, description, urlToImage, publishedAt, content }) => (
+          <Tile
+            key={id}
+            source={source}
+            author={author}
+            title={title}
+            description={description}
+            url={url}
+            urlToImage={urlToImage}
+            publishedAt={publishedAt}
+            content={content}
+          />
+        )
+      )}
     </MainBox>
   );
-
-  // <>
-  //   {news.map(({ source, author, title, description, url, urlToImage, publishedAt, content }) => (
-  //     <MainBox key={publishedAt}>
-  //       <div>Source: {(source.name, source.id)}</div>
-  //       <div>Author: {author}</div>
-  //       <div>Title: {title}</div>
-  //       <div>Description: {description}</div>
-  //       <div>URL: {url}</div>
-  //       <div>URL to Image: {urlToImage}</div>
-  //       <div>Published At: {publishedAt}</div>
-  //       <div>Content: {content}</div>
-  //     </MainBox>
-  //   ))}
-  // </>
 };
