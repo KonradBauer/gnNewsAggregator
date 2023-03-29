@@ -5,6 +5,7 @@ export const HeaderBox = styled.div`
   background: ${({ theme }) => theme.color.white};
   border-radius: 3px;
   display: flex;
+  justify-content: space-between;
 `;
 
 export const LogoWrapper = styled.div`
@@ -17,7 +18,7 @@ export const ButtonsWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 750px;
+  flex-flow: row wrap;
 `;
 
 export const LogoBox = styled.div`
@@ -43,7 +44,6 @@ export const ButtonView = styled.button`
 export const ButtonPopup = styled.button`
   border: none;
   padding: 10px;
-  margin-left: 30px;
   background: none;
   color: ${({ theme }) => theme.color.shark};
   font-weight: bold;
