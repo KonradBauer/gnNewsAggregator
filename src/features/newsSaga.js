@@ -1,4 +1,4 @@
-import { call, put, takeEvery, select, delay } from "redux-saga/effects";
+import { call, put, takeLatest, select, delay } from "redux-saga/effects";
 import { getNews } from "./getNews";
 import { statusSuccess, fetchNews, selectCountry, statusError, totalResults } from "./newsSlice";
 
@@ -15,5 +15,5 @@ export function* workGetNews() {
 }
 
 export function* watchGetNews() {
-  yield takeEvery(fetchNews.type, workGetNews);
+  yield takeLatest(fetchNews.type, workGetNews);
 }
