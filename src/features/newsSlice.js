@@ -5,7 +5,7 @@ export const newsSlice = createSlice({
   initialState: {
     status: "initial",
     news: null,
-    country: "pl",
+    country: null,
     totalResults: null,
   },
   reducers: {
@@ -28,7 +28,7 @@ export const newsSlice = createSlice({
   },
 });
 
-export const { statusError, statusLoading, statusSuccess, fetchNews, totalResults } =
+export const { statusError, statusLoading, statusSuccess, fetchNews, totalResults, countryChange } =
   newsSlice.actions;
 
 export const selectNews = (state) => state.news;

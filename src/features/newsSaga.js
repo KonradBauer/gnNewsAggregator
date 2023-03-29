@@ -1,19 +1,27 @@
-import { call, put, takeLatest, select, delay } from "redux-saga/effects";
+import { call, put, takeEvery, select, delay } from "redux-saga/effects";
 import { getNews } from "./getNews";
-import { statusSuccess, fetchNews, selectCountry, statusError, totalResults } from "./newsSlice";
+import {
+  statusSuccess,
+  statusLoading,
+  fetchNews,
+  selectCountry,
+  statusError,
+  totalResults,
+} from "./newsSlice";
 
 export function* workGetNews() {
   try {
     const country = yield select(selectCountry);
-    const polandNews = yield call(getNews, country);
+    const news = yield call(getNews, country);
+    yield put(statusLoading());
     yield delay(2000);
-    yield put(totalResults(polandNews.totalResults));
-    yield put(statusSuccess(polandNews.articles));
+    yield put(totalResults(news.totalResults));
+    yield put(statusSuccess(news.articles));
   } catch (error) {
     yield put(statusError());
   }
 }
 
 export function* watchGetNews() {
-  yield takeLatest(fetchNews.type, workGetNews);
+  yield takeEvery(fetchNews.type, workGetNews);
 }
