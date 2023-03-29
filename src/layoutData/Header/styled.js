@@ -19,6 +19,7 @@ export const ButtonsWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-flow: row wrap;
+  margin-right: 30px;
 `;
 
 export const LogoBox = styled.div`
