@@ -11,7 +11,7 @@ export const Header = () => {
       </LogoWrapper>
       <ButtonsWrapper>
         <ButtonView>View</ButtonView>
-        <ButtonPopup>Popup Button</ButtonPopup>
+        <ButtonPopup>Modal</ButtonPopup>
       </ButtonsWrapper>
     </HeaderBox>
   );
