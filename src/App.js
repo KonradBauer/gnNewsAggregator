@@ -5,7 +5,7 @@ import { Container } from "./layoutData/Container/styled";
 import { Footer } from "./layoutData/Footer";
 import { Header } from "./layoutData/Header";
 import { Main } from "./layoutData/Main";
-import { fetchNews, countryChange, selectNewsStatus } from "./features/newsSlice";
+import { fetchNews, countryChange, selectNewsStatus, changeView } from "./features/newsSlice";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import { AsideBox, Li, List, StyledNavLink } from "./layoutData/Aside/styled.js";
 import { Loading } from "./layoutData/Loading/index";
@@ -18,6 +18,7 @@ function App() {
   const handleFetchPl = () => {
     dispatch(countryChange("pl"));
     dispatch(fetchNews());
+    dispatch(changeView());
   };
 
   const handleFetchAr = () => {
