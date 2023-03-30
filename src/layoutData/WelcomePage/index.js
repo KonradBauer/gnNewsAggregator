@@ -1,5 +1,5 @@
 import { Wrapper } from "./styled";
 
 export const WelcomePage = () => {
-  return <Wrapper></Wrapper>;
+  return <Wrapper>Hello</Wrapper>;
 };

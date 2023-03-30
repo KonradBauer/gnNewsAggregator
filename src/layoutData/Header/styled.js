@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const HeaderBox = styled.div`
@@ -8,7 +9,7 @@ export const HeaderBox = styled.div`
   justify-content: space-between;
 `;
 
-export const LogoWrapper = styled.button`
+export const LogoWrapper = styled(NavLink)`
   display: flex;
   justify-content: flex-start;
   align-items: center;
