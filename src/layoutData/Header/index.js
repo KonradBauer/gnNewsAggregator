@@ -17,7 +17,7 @@ export const Header = () => {
       </LogoWrapper>
       <ButtonsWrapper>
         <ButtonView onClick={() => dispatch(changeView())}>
-          View: {viewStatus === true ? "List" : "Tiles"}
+          View: {viewStatus === false ? "List" : "Tiles"}
         </ButtonView>
         <ButtonPopup>Modal</ButtonPopup>
       </ButtonsWrapper>

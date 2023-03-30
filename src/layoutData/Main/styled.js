@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const MainBox = styled.div`
   display: grid;
@@ -22,23 +22,27 @@ export const MainBox = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileS}px) {
     max-width: 320px;
   }
-`;
 
-export const DataList = styled.ul`
-  display: flex;
-  max-width: 400px;
-  background: #ffffff;
-  box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
-  border-radius: 5px;
-  padding: 30px;
-  justify-content: center;
-  align-items: center;
+  ${({ list }) =>
+    list &&
+    css`
+      display: flex;
+      flex-direction: column;
+      max-width: 100%;
+      box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
+      border-radius: 5px;
+      padding: 30px;
+      align-items: center;
+      background-color: ${({ theme }) => theme.color.white}; ;
+    `}
 `;
 
 export const Tile = styled.ul`
+  min-height: 100px;
+  height: 100%;
   margin: 0 auto;
   margin-bottom: 10px;
-  display: flex;
+  /* display: flex; */
   flex-wrap: wrap;
   max-width: 400px;
   background: ${({ theme }) => theme.color.white};
@@ -51,6 +55,19 @@ export const Tile = styled.ul`
   transition: 0.2s;
   cursor: pointer;
 
+  ${({ list }) =>
+    list &&
+    css`
+      max-width: 900px;
+      width: 100%;
+      box-shadow: none;
+      display: grid;
+      grid-template-areas:
+        "img title"
+        "source source"
+        "publishAt publishAt";
+    `}
+
   &:hover {
     transform: scale(1.025);
   }
@@ -59,7 +76,7 @@ export const Tile = styled.ul`
     margin: 0 auto;
 
     &:hover {
-      transform: scale(1);
+      transform: scale(0);
     }
   }
 
@@ -75,6 +92,12 @@ export const Title = styled.h1`
   color: ${({ theme }) => theme.color.black};
   margin-bottom: 30px;
 
+  ${({ list }) =>
+    list &&
+    css`
+      grid-area: title;
+    `}
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileM}px) {
     font-size: 14px;
   }
@@ -84,7 +107,7 @@ export const Title = styled.h1`
   }
 `;
 
-export const Source = styled.span`
+export const Source = styled.div`
   display: flex;
   background-color: ${({ theme }) => theme.color.grey};
   color: ${({ theme }) => theme.color.black};
@@ -94,6 +117,12 @@ export const Source = styled.span`
   justify-content: center;
   margin-bottom: 3px;
 
+  ${({ list }) =>
+    list &&
+    css`
+      grid-area: source;
+    `}
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileM}px) {
     font-size: 10px;
   }
@@ -102,7 +131,7 @@ export const Source = styled.span`
   }
 `;
 
-export const PublishedAt = styled.span`
+export const PublishedAt = styled.div`
   display: flex;
   background-color: ${({ theme }) => theme.color.grey};
   color: ${({ theme }) => theme.color.black};
@@ -110,6 +139,12 @@ export const PublishedAt = styled.span`
   border-radius: 5px;
   justify-content: center;
 
+  ${({ list }) =>
+    list &&
+    css`
+      grid-area: publishAt;
+    `}
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileM}px) {
     font-size: 10px;
   }
@@ -119,6 +154,12 @@ export const PublishedAt = styled.span`
   }
 `;
 
-export const Image = styled.img`
-  aspect-ratio: 3/4;
+export const Image = styled.img.attrs((props) => ({ src: props.source }))`
+  max-width: 368px;
+  width: 100%;
+  ${({ list }) =>
+    list &&
+    css`
+      grid-area: img;
+    `}
 `;
