@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectNewsData, selectNewsStatus, selectView } from "../../features/newsSlice";
-import { DataList, Tile, PublishedAt, MainBox, Source, Title, Image } from "./styled";
+import { Tile, PublishedAt, MainBox, Source, Title, Image } from "./styled";
 
 export const Main = () => {
   const news = useSelector(selectNewsData);
