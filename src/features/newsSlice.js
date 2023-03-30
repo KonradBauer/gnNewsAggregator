@@ -7,6 +7,7 @@ export const newsSlice = createSlice({
     news: [],
     country: null,
     totalResults: null,
+    view: false,
   },
   reducers: {
     statusLoading: () => ({
@@ -25,11 +26,21 @@ export const newsSlice = createSlice({
     totalResults: (state, { payload: totalResults }) => {
       state.totalResults = totalResults;
     },
+    changeView: (state) => {
+      state.view = !state.view;
+    },
   },
 });
 
-export const { statusError, statusLoading, statusSuccess, fetchNews, totalResults, countryChange } =
-  newsSlice.actions;
+export const {
+  statusError,
+  statusLoading,
+  statusSuccess,
+  fetchNews,
+  totalResults,
+  countryChange,
+  changeView,
+} = newsSlice.actions;
 
 export const selectNews = (state) => state.news;
 
@@ -40,5 +51,7 @@ export const selectNewsData = (state) => selectNews(state).news;
 export const selectCountry = (state) => selectNews(state).country;
 
 export const selectTotalResults = (state) => selectNews(state).totalResults;
+
+export const selectView = (state) => selectNews(state).view;
 
 export default newsSlice.reducer;
