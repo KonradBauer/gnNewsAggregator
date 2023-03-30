@@ -2,7 +2,7 @@
   "name": "gnnews",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://konradbauer.github.io/gnNews/",
+  "homepage": "https://konradbauer.github.io/gnNewsAggregator/",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@mui/icons-material": "^5.11.11",
