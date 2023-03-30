@@ -24,6 +24,10 @@ export const List = styled.ul`
     margin-right: 5px;
     padding: 5px;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileS}px) {
+    font-size: 8px;
+  }
 `;
 
 export const Li = styled.li`

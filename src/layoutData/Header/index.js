@@ -4,7 +4,7 @@ import logo from "../../common/images/logo.png";
 export const Header = () => {
   return (
     <HeaderBox>
-      <LogoWrapper to="/start">
+      <LogoWrapper to="/">
         <LogoBox>
           <img src={logo} width="130" alt="logo" />
         </LogoBox>

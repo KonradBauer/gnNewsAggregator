@@ -1,17 +1,15 @@
 export const theme = {
   color: {
-    bunker: "#161B22",
-    deepSeaGreen: "#0E566A",
-    mandysPink: "#F4C0B3",
-    chatelle: "#AFA7BC",
     shark: "#202123",
     white: "#FFFFFF",
+    mercury: "#E5E5E5",
+    grey: "#E4E6F0",
   },
 
   breakpoints: {
     theSmallestMobileView: 290,
-    mobileS: 320,
-    mobileM: 425,
+    mobileS: 420,
+    mobileM: 606,
     mobileMax: 847,
     tabletVerticalMax: 991,
     beforeMobileMax: 1000,

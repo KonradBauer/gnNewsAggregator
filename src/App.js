@@ -8,7 +8,6 @@ import { Main } from "./layoutData/Main";
 import { fetchNews, countryChange, selectNewsStatus } from "./features/newsSlice";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import { AsideBox, Li, List, StyledNavLink } from "./layoutData/Aside/styled.js";
-import { LogoWrapper } from "./layoutData/Header/styled";
 import { Loading } from "./layoutData/Loading/index";
 import Flag from "react-world-flags";
 import { WelcomePage } from "./layoutData/WelcomePage";
@@ -95,6 +94,9 @@ function App() {
             <Route path="/country/italy">{status === "loading" ? <Loading /> : <Main />}</Route>
             <Route path="/country/us">{status === "loading" ? <Loading /> : <Main />}</Route>
             <Route path="/country/france">{status === "loading" ? <Loading /> : <Main />}</Route>
+            <Route path="/">
+              <WelcomePage />
+            </Route>
           </Switch>
           <Footer />
         </Container>
