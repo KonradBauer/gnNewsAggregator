@@ -5,18 +5,15 @@ import { Container } from "./layoutData/Container/styled";
 import { Footer } from "./layoutData/Footer";
 import { Header } from "./layoutData/Header";
 import { Main } from "./layoutData/Main";
-import { useEffect } from "react";
-import { fetchNews, countryChange } from "./features/newsSlice";
-import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
+import { fetchNews, countryChange, selectNewsStatus } from "./features/newsSlice";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import { AsideBox, Li, List, StyledNavLink } from "./layoutData/Aside/styled.js";
 import { LogoWrapper } from "./layoutData/Header/styled";
+import { Loading } from "./layoutData/Loading/index";
+import Flag from "react-world-flags";
 
 function App() {
   const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(fetchNews());
-  // }, [dispatch]);
 
   const handleFetchPl = () => {
     dispatch(countryChange("pl"));
@@ -48,6 +45,8 @@ function App() {
     dispatch(fetchNews());
   };
 
+  const status = useSelector(selectNewsStatus);
+
   return (
     <ThemeProvider theme={theme}>
       <HashRouter>
@@ -56,35 +55,44 @@ function App() {
           <AsideBox>
             <List>
               <StyledNavLink onClick={handleFetchPl} to="/country/poland">
-                <Li>Poland</Li>
+                <Li>
+                  <Flag code={"PL"} height="16" /> Poland
+                </Li>
               </StyledNavLink>
               <StyledNavLink onClick={handleFetchAr} to="/country/argentina">
-                <Li>Argentina</Li>
+                <Li>
+                  <Flag code={"AR"} height="16" /> Argentina
+                </Li>
               </StyledNavLink>
               <StyledNavLink onClick={handleFetchJp} to="/country/japan">
-                <Li>Japan</Li>
+                <Li>
+                  <Flag code={"JPN"} height="16" /> Japan
+                </Li>
               </StyledNavLink>
               <StyledNavLink onClick={handleFetchIt} to="/country/italy">
-                <Li>Italy</Li>
+                <Li>
+                  <Flag code={"IT"} height="16" /> Italy
+                </Li>
               </StyledNavLink>
               <StyledNavLink onClick={handleFetchUs} to="/country/us">
-                <Li>United States</Li>
+                <Li>
+                  <Flag code={"USA"} height="16" width="26" /> United States
+                </Li>
               </StyledNavLink>
               <StyledNavLink onClick={handleFetchFr} to="/country/france">
-                <Li>France</Li>
-              </StyledNavLink>
-              <StyledNavLink>
-                <LogoWrapper />
+                <Li>
+                  <Flag code={"FR"} height="16" /> France
+                </Li>
               </StyledNavLink>
             </List>
           </AsideBox>
           <Switch>
-            <Route path="/country/poland"></Route>
-            <Route path="/country/argentina"></Route>
-            <Route path="/country/japan"></Route>
-            <Route path="/country/italy"></Route>
-            <Route path="/country/us"></Route>
-            <Route path="/country/france"></Route>
+            <Route path="/country/poland">{status === "loading" ? <Loading /> : <Main />}</Route>
+            <Route path="/country/argentina">{status === "loading" ? <Loading /> : <Main />}</Route>
+            <Route path="/country/japan">{status === "loading" ? <Loading /> : <Main />}</Route>
+            <Route path="/country/italy">{status === "loading" ? <Loading /> : <Main />}</Route>
+            <Route path="/country/us">{status === "loading" ? <Loading /> : <Main />}</Route>
+            <Route path="/country/france">{status === "loading" ? <Loading /> : <Main />}</Route>
           </Switch>
           <Main />
           <Footer />
