@@ -7,19 +7,20 @@ export const newsSlice = createSlice({
     news: [],
     country: null,
     totalResults: null,
-    view: false,
+    view: true,
   },
   reducers: {
-    statusLoading: () => ({
-      news: null,
-      status: "loading",
-    }),
+    statusLoading: (state) => {
+      state.news = null;
+      state.status = "loading";
+      state.view = true;
+    },
     statusSuccess: (state, { payload: news }) => {
       state.news = news;
       state.status = "success";
     },
     statusError: () => ({ news: null, status: "error" }),
-    fetchNews: () => {},
+
     countryChange: (state, { payload: country }) => {
       state.country = country;
     },
@@ -29,6 +30,7 @@ export const newsSlice = createSlice({
     changeView: (state) => {
       state.view = !state.view;
     },
+    fetchNews: () => {},
   },
 });
 
