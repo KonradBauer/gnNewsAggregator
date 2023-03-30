@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import { selectNewsData, selectNewsStatus } from "../../features/newsSlice";
-import { Loading } from "../Loading";
 import { MainBox } from "./styled";
 
 export const Main = () => {
@@ -28,7 +27,6 @@ export const Main = () => {
               }) => (
                 <div key={content}>
                   <div>{urlToImage ? <img src={urlToImage} alt={title} /> : null}</div>
-
                   <h3>{title}</h3>
                   {/* <p>{description}</p>
                     <p>{content}</p> */}

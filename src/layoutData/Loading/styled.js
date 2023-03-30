@@ -4,7 +4,7 @@ import { ReactComponent as Spinner } from "../../common/svg/spinner.svg";
 export const SpinnerWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileS}px) {
