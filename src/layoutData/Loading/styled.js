@@ -2,13 +2,10 @@ import styled, { keyframes } from "styled-components";
 import { ReactComponent as Spinner } from "../../common/svg/spinner.svg";
 
 export const SpinnerWrapper = styled.div`
-  margin: 0 auto;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  margin-top: 219px;
-  max-width: 1920px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileS}px) {
     margin-top: 24px;
