@@ -1,34 +1,45 @@
 import { useSelector } from "react-redux";
-import { selectCountry, selectNewsData, selectNewsStatus } from "../../features/newsSlice";
-import { MainBox, NewsTile, Tile } from "./styled";
+import { selectNewsData, selectNewsStatus } from "../../features/newsSlice";
+import { Loading } from "../Loading";
+import { MainBox } from "./styled";
 
 export const Main = () => {
   const news = useSelector(selectNewsData);
   const status = useSelector(selectNewsStatus);
 
   return (
-    <MainBox>
-      {news
-        ? news.map(
-            ({ id, url, source, author, title, description, urlToImage, publishedAt, content }) => (
-              <div className="news-tile">
-                <div className="news-tile-image">
-                  <img src={urlToImage} alt={title} />
-                </div>
-                <div className="news-tile-content">
+    <>
+      {status === "loading" ? (
+        ""
+      ) : (
+        <MainBox>
+          {news &&
+            news.map(
+              ({
+                id,
+                url,
+                source,
+                author,
+                title,
+                description,
+                urlToImage,
+                publishedAt,
+                content,
+              }) => (
+                <div key={content}>
+                  <div>{urlToImage ? <img src={urlToImage} alt={title} /> : null}</div>
+
                   <h3>{title}</h3>
-                  <p>{description}</p>
-                  <p>{content}</p>
-                  <div className="news-tile-meta">
-                    <span>{source.name}</span>
-                    <span>{author}</span>
-                    <span>{publishedAt}</span>
-                  </div>
+                  {/* <p>{description}</p>
+                    <p>{content}</p> */}
+                  <span>{source.name}</span>
+                  {/* <span>{author}</span> */}
+                  <span>{publishedAt}</span>
                 </div>
-              </div>
-            )
-          )
-        : ""}
-    </MainBox>
+              )
+            )}
+        </MainBox>
+      )}
+    </>
   );
 };
