@@ -4,7 +4,7 @@ export const newsSlice = createSlice({
   name: "news",
   initialState: {
     status: "initial",
-    news: null,
+    news: [],
     country: null,
     totalResults: null,
   },
