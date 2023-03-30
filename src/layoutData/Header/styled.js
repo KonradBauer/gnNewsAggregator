@@ -29,6 +29,10 @@ export const LogoBox = styled.div`
   margin-top: 5px;
   margin-left: 30px;
   max-width: 130px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    margin-left: 3px;
+  }
 `;
 
 export const ButtonView = styled.button`

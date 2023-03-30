@@ -11,6 +11,7 @@ import { AsideBox, Li, List, StyledNavLink } from "./layoutData/Aside/styled.js"
 import { LogoWrapper } from "./layoutData/Header/styled";
 import { Loading } from "./layoutData/Loading/index";
 import Flag from "react-world-flags";
+import { WelcomePage } from "./layoutData/WelcomePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -76,7 +77,8 @@ function App() {
               </StyledNavLink>
               <StyledNavLink onClick={handleFetchUs} to="/country/us">
                 <Li>
-                  <Flag code={"USA"} height="16" width="26" /> United States
+                  <Flag code={"USA"} height="16" width="26" />
+                  United States
                 </Li>
               </StyledNavLink>
               <StyledNavLink onClick={handleFetchFr} to="/country/france">
@@ -94,7 +96,6 @@ function App() {
             <Route path="/country/us">{status === "loading" ? <Loading /> : <Main />}</Route>
             <Route path="/country/france">{status === "loading" ? <Loading /> : <Main />}</Route>
           </Switch>
-          <Main />
           <Footer />
         </Container>
       </HashRouter>
