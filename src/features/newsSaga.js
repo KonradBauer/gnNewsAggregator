@@ -14,7 +14,7 @@ export function* workGetNews() {
     const country = yield select(selectCountry);
     const news = yield call(getNews, country);
     yield put(statusLoading());
-    yield delay(2000);
+    yield delay(2000); // for show loading
     yield put(totalResults(news.totalResults));
     yield put(statusSuccess(news.articles));
   } catch (error) {
