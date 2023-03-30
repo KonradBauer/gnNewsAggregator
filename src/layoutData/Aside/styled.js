@@ -39,4 +39,8 @@ export const Li = styled.li`
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   text-align: center;
+
+  &:focus {
+    font-weight: bold;
+  }
 `;
