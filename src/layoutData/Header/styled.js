@@ -26,13 +26,14 @@ export const ButtonsWrapper = styled.div`
   margin-right: 30px;
 `;
 
-export const LogoBox = styled.div`
+export const LogoBox = styled.img.attrs((props) => ({ src: props.source }))`
   margin-top: 5px;
   margin-left: 30px;
   max-width: 130px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     margin-left: 3px;
+    width: 100%;
   }
 `;
 

@@ -11,9 +11,7 @@ export const Header = () => {
   return (
     <HeaderBox>
       <LogoWrapper to="/">
-        <LogoBox>
-          <img src={logo} width="130" alt="logo" />
-        </LogoBox>
+        <LogoBox source={logo} alt="logo" />
       </LogoWrapper>
       <ButtonsWrapper>
         <ButtonView onClick={() => dispatch(changeView())}>
