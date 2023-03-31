@@ -49,6 +49,10 @@ export const ButtonView = styled.button`
   &:active {
     color: hsl(230, 7%, 26%);
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    font-size: 10px;
+  }
 `;
 
 export const ButtonPopup = styled.button`
@@ -62,6 +66,10 @@ export const ButtonPopup = styled.button`
   &:active {
     color: hsl(230, 7%, 26%);
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    font-size: 10px;
+  }
 `;
 
 export const ButtonLanguage = styled.button`
@@ -74,5 +82,9 @@ export const ButtonLanguage = styled.button`
 
   &:active {
     color: hsl(230, 7%, 26%);
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    font-size: 10px;
   }
 `;
