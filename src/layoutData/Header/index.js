@@ -1,12 +1,13 @@
 import { HeaderBox, LogoBox, ButtonView, LogoWrapper, ButtonsWrapper, ButtonPopup } from "./styled";
 import logo from "../../common/images/logo.png";
 import { useDispatch, useSelector } from "react-redux";
-import { changeView, selectView } from "../../features/newsSlice";
+import { changeView, selectModal, selectView, toggleModal } from "../../features/newsSlice";
+import { Modal } from "../Modal";
 
 export const Header = () => {
   const dispatch = useDispatch();
   const viewStatus = useSelector(selectView);
-  console.log(viewStatus);
+  const modalStatus = useSelector(selectModal);
 
   return (
     <HeaderBox>
@@ -17,7 +18,9 @@ export const Header = () => {
         <ButtonView onClick={() => dispatch(changeView())}>
           View: {viewStatus === false ? "List" : "Tiles"}
         </ButtonView>
-        <ButtonPopup>Modal</ButtonPopup>
+        <ButtonPopup onClick={() => dispatch(toggleModal())}>
+          Modal {modalStatus && <Modal />}
+        </ButtonPopup>
       </ButtonsWrapper>
     </HeaderBox>
   );

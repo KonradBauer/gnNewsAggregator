@@ -8,6 +8,7 @@ export const newsSlice = createSlice({
     country: null,
     totalResults: null,
     view: true,
+    modal: false,
   },
   reducers: {
     statusLoading: (state) => {
@@ -30,6 +31,9 @@ export const newsSlice = createSlice({
     changeView: (state) => {
       state.view = !state.view;
     },
+    toggleModal: (state) => {
+      state.modal = !state.modal;
+    },
     fetchNews: () => {},
   },
 });
@@ -42,6 +46,7 @@ export const {
   totalResults,
   countryChange,
   changeView,
+  toggleModal,
 } = newsSlice.actions;
 
 export const selectNews = (state) => state.news;
@@ -55,5 +60,7 @@ export const selectCountry = (state) => selectNews(state).country;
 export const selectTotalResults = (state) => selectNews(state).totalResults;
 
 export const selectView = (state) => selectNews(state).view;
+
+export const selectModal = (state) => selectNews(state).modal;
 
 export default newsSlice.reducer;
