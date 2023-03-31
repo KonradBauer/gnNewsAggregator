@@ -41,7 +41,6 @@ export const Tile = styled.ul`
   min-height: 100px;
   height: 100%;
   margin: 0 auto;
-  margin-bottom: 10px;
   flex-wrap: wrap;
   max-width: 400px;
   background: ${({ theme }) => theme.color.white};
@@ -97,7 +96,6 @@ export const Title = styled.h1`
 `;
 
 export const Source = styled.div`
-  postion: absolute;
   display: flex;
   background-color: ${({ theme }) => theme.color.grey};
   color: ${({ theme }) => theme.color.black};
@@ -106,7 +104,6 @@ export const Source = styled.div`
   gap: 5px;
   justify-content: center;
   margin-bottom: 3px;
-  bottom: 0;
 
   ${({ list }) =>
     list &&
@@ -124,14 +121,13 @@ export const Source = styled.div`
 `;
 
 export const PublishedAt = styled.div`
-  postion: absolute;
   display: flex;
   background-color: ${({ theme }) => theme.color.grey};
   color: ${({ theme }) => theme.color.black};
   padding: 5px;
   border-radius: 5px;
   justify-content: center;
-  bottom: 0;
+
   ${({ list }) =>
     list &&
     css`
