@@ -1,4 +1,4 @@
-import { Content, Popup, DismissButton } from "./styled";
+import { Content, Popup } from "./styled";
 
 export const Modal = () => {
   return (
