@@ -42,7 +42,6 @@ export const Tile = styled.ul`
   height: 100%;
   margin: 0 auto;
   margin-bottom: 10px;
-  /* display: flex; */
   flex-wrap: wrap;
   max-width: 400px;
   background: ${({ theme }) => theme.color.white};
@@ -58,26 +57,20 @@ export const Tile = styled.ul`
   ${({ list }) =>
     list &&
     css`
+      justify-content: flex-start;
+      gap: 10px;
       max-width: 900px;
       width: 100%;
       box-shadow: none;
-      display: grid;
-      grid-template-areas:
-        "img title"
-        "source source"
-        "publishAt publishAt";
+      display: flex;
     `}
 
   &:hover {
-    transform: scale(1.025);
+    transform: scale(1.02);
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorizontalMax}px) {
     margin: 0 auto;
-
-    &:hover {
-      transform: scale(0);
-    }
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileS}px) {
@@ -86,28 +79,25 @@ export const Tile = styled.ul`
 `;
 
 export const Title = styled.h1`
-  margin-top: 0;
+  margin-top: 5px;
   font-size: 20px;
   font-weight: bold;
   color: ${({ theme }) => theme.color.black};
-  margin-bottom: 30px;
-
-  ${({ list }) =>
-    list &&
-    css`
-      grid-area: title;
-    `}
+  margin-bottom: 20px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileM}px) {
     font-size: 14px;
+    margin-bottom: 15px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileS}px) {
     font-size: 12px;
+    margin-bottom: 10px;
   }
 `;
 
 export const Source = styled.div`
+  postion: absolute;
   display: flex;
   background-color: ${({ theme }) => theme.color.grey};
   color: ${({ theme }) => theme.color.black};
@@ -116,11 +106,13 @@ export const Source = styled.div`
   gap: 5px;
   justify-content: center;
   margin-bottom: 3px;
+  bottom: 0;
 
   ${({ list }) =>
     list &&
     css`
-      grid-area: source;
+      width: 50%;
+      margin: 0 auto;
     `}
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileM}px) {
@@ -132,17 +124,19 @@ export const Source = styled.div`
 `;
 
 export const PublishedAt = styled.div`
+  postion: absolute;
   display: flex;
   background-color: ${({ theme }) => theme.color.grey};
   color: ${({ theme }) => theme.color.black};
   padding: 5px;
   border-radius: 5px;
   justify-content: center;
-
+  bottom: 0;
   ${({ list }) =>
     list &&
     css`
-      grid-area: publishAt;
+      width: 50%;
+      margin: 0 auto;
     `}
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileM}px) {
@@ -157,9 +151,18 @@ export const PublishedAt = styled.div`
 export const Image = styled.img.attrs((props) => ({ src: props.source }))`
   max-width: 368px;
   width: 100%;
-  ${({ list }) =>
-    list &&
-    css`
-      grid-area: img;
-    `}
+`;
+
+export const Description = styled.div`
+  margin-bottom: 10px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileM}px) {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileS}px) {
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
 `;

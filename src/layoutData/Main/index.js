@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectNewsData, selectNewsStatus, selectView } from "../../features/newsSlice";
-import { Tile, PublishedAt, MainBox, Source, Title, Image } from "./styled";
+import { Tile, PublishedAt, MainBox, Source, Title, Image, Description } from "./styled";
 
 export const Main = () => {
   const news = useSelector(selectNewsData);
@@ -34,8 +34,10 @@ export const Main = () => {
                           <Image source={urlToImage ? urlToImage : null} alt={title} />
                         ) : null}
                         <Title>{title}</Title>
-                        {/* <p>{description}</p>
-                    <p>{content}</p> */}
+                        {
+                          <Description>{description}</Description>
+                          // <p>{content}</p>
+                        }
                         <Source>{source.name}</Source>
                         {/* <span>{author}</span> */}
                         <PublishedAt>{publishedAt}</PublishedAt>
@@ -61,9 +63,9 @@ export const Main = () => {
                   }) => (
                     <div key={title}>
                       <Tile list>
-                        {urlToImage ? (
+                        {/* {urlToImage ? (
                           <Image list source={urlToImage ? urlToImage : null} alt={title} />
-                        ) : null}
+                        ) : null} */}
                         <Title list>{title}</Title>
                         {/* <p>{description}</p>
                     <p>{content}</p> */}
