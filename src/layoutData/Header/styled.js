@@ -16,6 +16,7 @@ export const LogoWrapper = styled(NavLink)`
   cursor: pointer;
   background-color: transparent;
   border: none;
+  outline: none;
 `;
 
 export const ButtonsWrapper = styled.div`
