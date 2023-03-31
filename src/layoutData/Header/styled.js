@@ -63,3 +63,16 @@ export const ButtonPopup = styled.button`
     color: hsl(230, 7%, 26%);
   }
 `;
+
+export const ButtonLanguage = styled.button`
+  border: none;
+  padding: 10px;
+  background: none;
+  color: ${({ theme }) => theme.color.shark};
+  font-weight: bold;
+  cursor: pointer;
+
+  &:active {
+    color: hsl(230, 7%, 26%);
+  }
+`;

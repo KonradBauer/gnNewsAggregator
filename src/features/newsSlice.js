@@ -10,6 +10,7 @@ export const newsSlice = createSlice({
     view: true,
     modal: false,
     newsModal: false,
+    language: false,
   },
   reducers: {
     statusLoading: (state) => {
@@ -38,6 +39,9 @@ export const newsSlice = createSlice({
     toggleNewsModal: (state) => {
       state.newsModal = !state.newsModal;
     },
+    toggleLanguage: (state) => {
+      state.language = !state.language;
+    },
     fetchNews: () => {},
   },
 });
@@ -52,6 +56,7 @@ export const {
   changeView,
   toggleModal,
   toggleNewsModal,
+  toggleLanguage,
 } = newsSlice.actions;
 
 export const selectNews = (state) => state.news;
@@ -69,5 +74,7 @@ export const selectView = (state) => selectNews(state).view;
 export const selectModal = (state) => selectNews(state).modal;
 
 export const selectNewsModal = (state) => selectNews(state).newsModal;
+
+export const selectLanguage = (state) => selectNews(state).language;
 
 export default newsSlice.reducer;

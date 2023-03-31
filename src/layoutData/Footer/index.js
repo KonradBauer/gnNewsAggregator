@@ -1,10 +1,12 @@
 import { ArticleCounter, DateContainer, FooterBox } from "./styled";
 import { useSelector } from "react-redux";
-import { selectTotalResults } from "../../features/newsSlice";
+import { selectLanguage, selectTotalResults } from "../../features/newsSlice";
 import { useState, useEffect } from "react";
 
 export const Footer = () => {
   const totalNews = useSelector(selectTotalResults);
+  const languageStatus = useSelector(selectLanguage);
+
   const [time, setTime] = useState(new Date().toLocaleTimeString());
 
   useEffect(() => {
@@ -17,8 +19,12 @@ export const Footer = () => {
 
   return (
     <FooterBox>
-      <DateContainer>{`Time is: ${time}`}</DateContainer>
-      <ArticleCounter>Count of articles: {totalNews}</ArticleCounter>
+      <DateContainer>
+        {languageStatus === false ? "Time is:" : "Aktualny czas:"} {time}
+      </DateContainer>
+      <ArticleCounter>
+        {languageStatus === false ? "Count of articles:" : "Liczba artukułów:"} {totalNews}
+      </ArticleCounter>
     </FooterBox>
   );
 };
