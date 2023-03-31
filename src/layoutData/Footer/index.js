@@ -6,7 +6,8 @@ import { useState, useEffect } from "react";
 export const Footer = () => {
   const totalNews = useSelector(selectTotalResults);
   const languageStatus = useSelector(selectLanguage);
-
+  const pageURL = window.location.href;
+  const homepage = "http://localhost:3000/gnNewsAggregator#/";
   const [time, setTime] = useState(new Date().toLocaleTimeString());
 
   useEffect(() => {
@@ -22,9 +23,13 @@ export const Footer = () => {
       <DateContainer>
         {languageStatus === false ? "Time is:" : "Aktualny czas:"} {time}
       </DateContainer>
-      <ArticleCounter>
-        {languageStatus === false ? "Count of articles:" : "Liczba artukułów:"} {totalNews}
-      </ArticleCounter>
+      {pageURL === homepage ? (
+        ""
+      ) : (
+        <ArticleCounter>
+          {languageStatus === false ? "Count of articles:" : "Liczba artukułów:"} {totalNews}
+        </ArticleCounter>
+      )}
     </FooterBox>
   );
 };
