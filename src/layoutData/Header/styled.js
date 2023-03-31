@@ -45,6 +45,10 @@ export const ButtonView = styled.button`
   color: ${({ theme }) => theme.color.shark};
   font-weight: bold;
   cursor: pointer;
+
+  &:active {
+    color: hsl(230, 7%, 26%);
+  }
 `;
 
 export const ButtonPopup = styled.button`
@@ -54,4 +58,8 @@ export const ButtonPopup = styled.button`
   color: ${({ theme }) => theme.color.shark};
   font-weight: bold;
   cursor: pointer;
+
+  &:active {
+    color: hsl(230, 7%, 26%);
+  }
 `;
