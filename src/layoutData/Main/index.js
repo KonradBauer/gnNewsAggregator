@@ -8,6 +8,7 @@ import {
 } from "../../features/newsSlice";
 import { Tile, PublishedAt, MainBox, Source, Title, Image, Description } from "./styled";
 import { NewsModal } from "../NewsModal/index";
+import { useState } from "react";
 
 export const Main = () => {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ export const Main = () => {
   const status = useSelector(selectNewsStatus);
   const viewStatus = useSelector(selectView);
   const modalStatus = useSelector(selectNewsModal);
+  const [id, setId] = useState();
 
   return (
     <>
@@ -25,10 +27,14 @@ export const Main = () => {
           {viewStatus ? (
             <MainBox>
               {news &&
-                news.map(({ source, title, description, urlToImage, publishedAt }) => (
+                news.map(({ source, title, description, urlToImage, publishedAt }, index) => (
                   <div key={title}>
-                    <Tile onClick={() => dispatch(toggleNewsModal())}>
-                      {modalStatus && <NewsModal />}
+                    <Tile
+                      onClick={() => {
+                        setId(index);
+                        dispatch(toggleNewsModal());
+                      }}
+                    >
                       {urlToImage ? (
                         <Image source={urlToImage ? urlToImage : null} alt={title} />
                       ) : null}
@@ -39,20 +45,27 @@ export const Main = () => {
                     </Tile>
                   </div>
                 ))}
+              {modalStatus && <NewsModal articleId={id} />}
             </MainBox>
           ) : (
             <MainBox list>
               {news &&
-                news.map(({ source, title, publishedAt }) => (
+                news.map(({ source, title, publishedAt }, index) => (
                   <div key={title}>
-                    <Tile list onClick={() => dispatch(toggleNewsModal())}>
-                      {modalStatus && <NewsModal />}
+                    <Tile
+                      list
+                      onClick={() => {
+                        setId(index);
+                        dispatch(toggleNewsModal());
+                      }}
+                    >
                       <Title list>{title}</Title>
                       <Source list>{source.name}</Source>
                       <PublishedAt list>{publishedAt}</PublishedAt>
                     </Tile>
                   </div>
                 ))}
+              {modalStatus && <NewsModal articleId={id} />}
             </MainBox>
           )}
         </>
