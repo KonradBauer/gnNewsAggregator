@@ -2,6 +2,8 @@
 
 ## It's a news aggregator, created to prove my skills as recruitment task to gnStudio.pl. You can here find actual news from selected countries, like Poland, Argentina, Japan, Italy, United States and France. This app fetch news dynamically from API : https://newsapi.org/. You can switch menu language (PL/ENG) and also switch view mode (Tiles, List).
 
+Remember, to launch this app you must open it on localhost, because this API doesn't allow run outside of the local server.
+
 ### How to use: 
 
 ![animation](https://github.com/KonradBauer/gnNewsAggregator/blob/main/public/gnNews.gif?raw=true)
