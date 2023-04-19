@@ -1,4 +1,4 @@
-# gnNews 📰📺
+News Aggregator 📰📺
 
 ## It's a news aggregator. You can here find actual news from selected countries, like Poland, Argentina, Japan, Italy, United States and France. This app fetch news dynamically from API : https://newsapi.org/. You can switch menu language (PL/ENG) and also switch view mode (Tiles, List).
 
